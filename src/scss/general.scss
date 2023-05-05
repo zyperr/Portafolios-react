@@ -1,0 +1,10 @@
+@use "./base/reset.scss";
+@import "./abstracts/variables";
+
+
+body{
+    background:  $bg-general;
+}
+body,button,input::placeholder{
+    font-family: $font;
+}

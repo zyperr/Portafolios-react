@@ -1,0 +1,62 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+.education {
+  height: max-content;
+  margin: 50px 30px;
+  color: white;
+  position: relative;
+  &::after {
+    @include gradient-background(#01bc7ac7, #0df4a3c7, 55deg);
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    top: 0;
+    left: 10px;
+    margin-left: -3px;
+    z-index: -1;
+    border-radius: 100%;
+    animation: moveline 6s ease-in-out forwards;
+  }
+}
+
+
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+  .education {
+    &::after {
+      left: 23%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .education {
+    &::after {
+      left: 30.5%;
+    }
+  }
+}
+@media screen and (min-width: 1300px) {
+    .education {
+      &::after {
+        left: 34.5%;
+      }
+    }
+  }
+@media screen and (min-width: 1440px) {
+  .education {
+    &::after {
+      left: 36.1%;
+    }
+  }
+}
+

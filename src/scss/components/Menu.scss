@@ -1,0 +1,68 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+header {
+  @include gradient-background(#ea5aa2, #cf649a, -200deg);
+  height: 50px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #000;
+    .logo{
+      margin-right: 20px;
+      color: white;
+    }
+    .nav__hamburger {
+      font-size: 35px;
+      margin: 5px 15px;
+      transition: color 500ms ease-in-out;
+      cursor: pointer;
+      &.active {
+        color: $color-nav-active;
+      }
+    }
+    .nav__container-list {
+      @include neo(none, 5px,#ea5aa2,#cf649a);
+      @include gradient-background(#cf649a, #a23b6f, 150deg);
+
+      border-radius: 0px 0px 50% 0%;
+      border: 3px solid #000;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+
+      position: absolute;
+      left: -200px;
+      top: 50px;
+
+      width: 150px;
+      height: 350px;
+
+      z-index: 1;
+      transition: left 500ms ease-in-out;
+
+      &.active {
+        left: 0px;
+      }
+      .nav__link-item {
+        margin: 5px 10px;
+        a {
+          font-weight: 600;
+          color: $color-nav-link;
+          transition: color 500ms ease-in-out;
+          &.active {
+            color: $color-nav-active;
+          }
+        }
+      }
+    }
+  }
+}

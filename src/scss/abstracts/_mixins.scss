@@ -1,0 +1,9 @@
+@mixin neo($radius, $eje,$color-blur1:none,$color-blur2:none) {
+  border-radius: $radius;
+  box-shadow: ($eje) $eje ($eje * 2) $color-blur1, (-$eje) (-$eje) ($eje * 2) $color-blur2;
+}
+
+@mixin gradient-background($start-color, $end-color, $direction) {
+  background: $start-color; /* fallback for non-supporting browsers */
+  background: linear-gradient($direction, $start-color, $end-color);
+}

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@import "../abstracts/variables";
+
+@import "../abstracts/mixins";
+.footer {
+  @include gradient-background($bg-color,$bg-color-2,200deg);
+  @include neo(0px,4px);
+
+  min-height: 50px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #000;
+  p{
+    color:$color-nav-link;
+    text-align: center;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .social-medias{
+    display: flex;
+    li{
+      font-size: 30px;
+      transition: color 500ms ease-in;
+      padding: 0 10px;
+      &:hover{
+        color: $color-nav-active;
+        border-bottom: 1px solid $color-nav-active;
+      }
+    }
+  }
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: $color-nav-link;
+  margin: 5px 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: bold;
+  font-weight: 300;
+  a{                    
+    font-weight: 600;
+    &.active{
+      transition: color 500ms ease-in-out;
+      color: $color-nav-active;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+
+

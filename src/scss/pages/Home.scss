@@ -1,0 +1,158 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.home {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  transform: translateX(0px);
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &.active {
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(-1000px);
+  }
+  .big-bubbles {
+    position: absolute;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 60% 90% 50% 75%;
+    @include neo(60% 90% 50% 75%, 5px, $bg-color, $bg-color-2);
+    width: 350px;
+    height: 350px;
+    animation: on-animation-bubble 5s alternate infinite;
+  }
+  color: $color-paragraph;
+}
+.home__greeting {
+  font-size: 50px;
+  width: max-content;
+  margin: 0px 20px;
+  color: #f3f3f3;
+  &::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background: $bg-color;
+    display: inline-block;
+  }
+}
+.home__title {
+  text-align: center;
+  font-size: 30px;
+  margin: 20px 0px;
+  color: #f3f3f3;
+  &::first-letter {
+    color: $bg-color;
+  }
+  p {
+    color: #f3f3f3;
+    font-size: 25px;
+    opacity: 0.8;
+    &::first-letter {
+      color: $bg-color;
+    }
+  }
+}
+.home__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 15px 3px 15px 3px;
+  margin: 10px 0px;
+  background: $color-nav-active;
+  color: $color-nav-link;
+  font-weight: 500;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  &:active,
+  &:hover {
+    transition: color, background 500ms ease-out;
+    background: $color-nav-link;
+    color: $color-nav-active;
+  }
+}
+.sobre-mi__container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translateX(-700px);
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &.active {
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(0px);
+  }
+  .sobre-mi__paragraph {
+    color: $color-paragraph;
+    max-width: 50%;
+    font-size: 20px;
+    text-align: center;
+    .highlight-text {
+      color: $bg-color-2;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .home {
+    overflow-x: hidden;
+    .big-bubbles {
+      width: 260px;
+      height: 260px;
+    }
+    .home__greeting {
+      font-size: 35px;
+    }
+    .home__title {
+      font-size: 20px;
+    }
+    .home__links {
+      font-size: 15px;
+    }
+  }
+  .sobre-mi__container {
+    &.active {
+      top: 35%;
+    }
+    .sobre-mi__paragraph {
+      max-width: 70%;
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: 601px) {
+  .sobre-mi__container {
+    &.active {
+      top: 50%;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sobre-mi__container {
+    transform: translateX(-1600px);
+    &.active {
+      top: 30%;
+    }
+  }
+}
+@media screen and (min-width: 2000px) {
+  .sobre-mi__container {
+    transform: translateX(-2900px);
+    &.active {
+      top: 30%;
+    }
+  }
+}
+@keyframes on-animation-bubble {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 320deg;
+  }
+}

@@ -1,0 +1,49 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+.portafolio {
+    display: flex;
+    flex-flow: column nowrap;
+    scroll-snap-type: x mandatory;
+    background: url("../../assets/circle-scatter-haikei\ \(1\).png");
+    background-attachment: fixed;
+    animation: animateBackground 10s alternate infinite;
+    .go-up{
+      position: fixed;
+      bottom: 20px;
+      right: 50px;
+      border: none;
+      font-size: 25px;
+      padding: 0px 10px;
+      color: $color-nav-link;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      cursor: pointer;
+      @include gradient-background($bg-color-2,$bg-color,-55deg);
+      &:active{
+        color: $color-nav-active;
+        @include gradient-background(white,gray,-55deg)
+      }
+    }
+}
+
+@keyframes animateBackground {
+    from {
+      background-position: 0 100%;
+    }
+    to {
+      background-position: 100% 0;
+    }
+}
+
+@media screen and (min-width:768px) {
+  .portafolio{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .card{
+      width: 35%;
+    }
+  }
+}
