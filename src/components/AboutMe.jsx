@@ -31,7 +31,7 @@ function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
       </button>
       <div>
         <a
-          href="../../public/cv-maximiliano-vera.pdf"
+          href="#"
           download
           className="home__links"
         >
