@@ -19,7 +19,7 @@ function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
         aprender siempre{" "}
         <span className="highlight-text">dispuesto a colaborar en equipo</span>{" "}
         y encontrar soluciones innovadoras.Si deseas conocer más sobre mi
-        trayectoria y habilidades, ¡no dudes en contactarme!
+        trayectoria y habilidades, ¡no dudes en contactarme! 
       </p>
       <button
         className="home__links"
@@ -31,7 +31,7 @@ function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
       </button>
       <div>
         <a
-          href="../../public/cv-maximiliano-vera.pdf"
+          href="#"
           download
           className="home__links"
         >
