@@ -117,7 +117,7 @@
   }
   .sobre-mi__container {
     &.active {
-      top: 35%;
+      top: 10%;
     }
     .sobre-mi__paragraph {
       max-width: 70%;
@@ -128,7 +128,7 @@
 @media screen and (min-width: 601px) {
   .sobre-mi__container {
     &.active {
-      top: 50%;
+      top: 20%;
     }
   }
 }
