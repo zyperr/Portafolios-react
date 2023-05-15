@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "../scss/pages/Home.scss";
 //react icons
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+// cv
+import cv from "../assets/pdf/cv-Maximiliano-Vera.pdf"
 function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
   return (
     <div
@@ -31,7 +33,7 @@ function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
       </button>
       <div>
         <a
-          href="../../public/cv-Maximiliano-Vera.pdf"
+          href={cv}
           download
           className="home__links"
         >
