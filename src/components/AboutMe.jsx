@@ -6,7 +6,6 @@ import "../scss/pages/Home.scss";
 //react icons
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 // cv
-import cv from "../assets/pdf/cv-Maximiliano-Vera.pdf"
 function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
   return (
     <div
@@ -32,13 +31,6 @@ function AboutMe({ resetScroll, showAboutMe, handleAboutMe }) {
         <FaArrowAltCircleLeft />
       </button>
       <div>
-        <a
-          href={cv}
-          download
-          className="home__links"
-        >
-          descargar CV
-        </a>
         <Link to="/portafolio" className="home__links" onClick={resetScroll}>
           proyectos
         </Link>
